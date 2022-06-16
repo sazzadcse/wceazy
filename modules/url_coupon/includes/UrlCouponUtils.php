@@ -31,7 +31,7 @@ if (!class_exists ('UrlCouponUtils')) {
         public function wceazy_url_coupon_admin_data_tab ( $tabs )
         {
             $tabs['wceazy_url_coupon'] = array(
-                'label'  => _e('wcEazy URL Coupon', 'wceazy'),
+                'label'  => __('wcEazy URL Coupon', 'wceazy'),
                 'target' => 'wceazy_url_coupon',
                 'class'  => 'wceazy_url_coupon',
             );
@@ -230,7 +230,7 @@ if (!class_exists ('UrlCouponUtils')) {
 
                 $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
                 wp_redirect($shop_page_url);
-                wc_add_notice( _e( 'Please first add the product to the cart and then apply the URL coupon.', 'wceazy' ), 'error' );
+                wc_add_notice( __( 'Please first add the product to the cart and then apply the URL coupon.', 'wceazy' ), 'error' );
                 exit();
             }
 
