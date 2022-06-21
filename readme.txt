@@ -1,11 +1,11 @@
 === wcEazy ===
-Contributors: wceazy, wpcommerz, sazzadpro
+Contributors: wceazy, wpcommerz, sazzadpro, darklup
 Donate link: https://wceazy.com
 Tags: woocommerce, bulk coupon generator, bogo deal, floating cart, url coupon
 Requires PHP: 5.6
 Requires at least: 5.1
 Tested up to: 6.0
-Stable tag: 1.0.4
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,8 +15,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 <p>With wcEazy, an all-in-one WooCommerce plugin, you can increase your sales with a wide variety of features. It simplifies the overall customizing way of a WooCommerce site. In addition, no coding related knowledge is required to access this plugin. It comes up with an easy setup and user friendly accessing process.</p>
 
-<p>Dozens of WordPress WooCommerce plugins are no longer necessary!<br>
-   With just one plugin, you can improve the flexibility of your Woocommerce website.</p>
+<p>Dozens of WordPress WooCommerce plugins are no longer necessary!
+With just one plugin, you can improve the flexibility of your Woocommerce website.</p>
 
 <h3>wcEazy comes with the following features:</h3>
 
@@ -33,10 +33,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 
-<h3>Modules of WordPress plugin wcFuison</h3>
+<h3>Modules of WordPress plugin wcEazy</h3>
 
 <ol>
-	<li><strong>Auto Apply Coupon:</strong> Enabling this module you will let your customers enjoy the term of automatically applying coupons by just clicking on the <strong>Apply Coupon</strong> button. It helps to remove the hassle of entering a coupon code for a coupon.</li>
+	<li><strong>Auto Apply Coupon:</strong> Enabling this module you will let your customers enjoy the term of automatically applying coupons by just clicking on the Apply Coupon button. It helps to remove the hassle of entering a coupon code for a coupon.</li>
 	<li><strong>BOGO Deal:</strong> Create attractive BOGO deals for your WooCommerce store to catch your customers attention and encourage them to stay in your store and buy products more and more.
 </li>
 	<li><strong>Coupon Generator:</strong> Promote your WooCommerce site generating similar coupons in big quantities with wcEazy. Using this plugin you are allowed to Generate similar types of coupons for clients.</li>
@@ -51,7 +51,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 </ol>
 
 <br>
-<strong>These are the modules with various features and functions. Lets learn more about each of the modules features.</strong>
+<strong>These are the modules with various features and functions. Lets learn more about each of the modules and features.</strong>
 <br>
 
 
@@ -348,7 +348,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 <h3>Get Started with wcEazy</h3>
-<p>When you are working on your WooCommerce store and want to make it full of functions and flexibilities then WordPress plugin wcEazy can be the great solution for you. You will get all kinds of support from one plugin. So, hurry up and grab the most wonderful and workable plugin that is highly recommended for you.
+<p>When you are working on your WooCommerce store and want to make it full of functions and flexibilities then WordPress plugin wcEazy can be the great solution for you. You will get all kinds of support from one plugin. So, hurry up and grab the most wonderful and workable plugin that is highly recommended for you. 
 </p>
 <p>Replace all of your complex and time consuming WooCommerce plugins with a single plugin that does everything they do and more!</p>
 
@@ -371,6 +371,32 @@ That's it, wcEazy Plugin is now activated on your site!
 Download "wcEazy WordPress Plugin"  and then extract the zip file and just drop the contents in the wp-content/plugins/ directory of your WordPress installation and then activate the Plugin from Plugins page.
 
 
+== Frequently Asked Questions ==
+= 1. How to install wcEazy for WooCommerce website ( free version)? =
+Installation of wcEazy in your WordPress website’s dashboard is the easiest way. You can easily install wcEazy in your WordPress website’s  Dashboard. Follow the given steps to add wcEazy in your site.
+First of all log in to your site’s Dashboard.
+<ol>
+	<li>In the left panel click on Plugins tab then click Add New.</li>
+	<li>In the search bar, search for wcEazy. The plugin will appear at the top of the list.</li>
+	<li>Install the wcEazy by clicking on Install Now.</li>
+	<li>After completing installation, Activate wcEazy.</li>
+</ol> 
+Adding wcEazy is done. Now in the left panel of your Dashboard you can see the tab of wcEazy.
+
+= 2. How to unlock the locked features? =
+To unlock the locked features you need to install the paid version of wcEazy. Install the paid wcEazy and enjoy all of its amazing features.
+
+= 3. Do I need to acquire any coding knowledge to use wcEazy? =
+No, you don’t have to gather any coding knowledge. Just install the plugin, it is very much user friendly and provides proper direction to access all its features.
+
+= 4. Does the plugin provide necessary information to help? =
+Yes, the plugin provides documentation. You can go through the documentation if you need any help or instruction to use this plugin. All module and feature related details are given in the documentation.
+
+= 5. Why should I grab the paid version of wcEazy? =
+When you are using the free version, you can feel the necessity of having such an efficient plugin like wcEazy in your WooCommerce site. And you will be more interested to explore all locked features as all modules and features are very much supportive for a WooCommerce site.
+The most important thing is this plugin is a single package of 50+ solutions. So you don’t have to buy individual plugins to serve your purpose as wcEazy is an all one solution with multiple modules and features. For this reason paid wcEazy is highly recommended for you.
+
+
 
 == Screenshots ==
 
@@ -389,18 +415,5 @@ screenshot-9.png
 
 == Changelog ==
 
-= 1.0.4 =
-1. Fixed: Floating Cart Frontent JS Issues.
-2. Added: To access the plugin, WooCommerce must be activated.
-
-= 1.0.3 =
-1. Updated: Fixed Dashboard Style Issues & WooCommerce activated issues if WooCommerce is not install & activate.
-2. Improved: Performance of the plugin has been improved.
-
-= 1.0.2 =
-1. Updated: Minor Bug fixed on PDF Invoice Module
-2. Updated: Compatibility with WordPress 6.0
-3. Improved: Performance of the plugin has been improved
-
 = 1.0.1 =
-This is initial Release for wcEazy Lite
+This is initial Release for wcEazy
