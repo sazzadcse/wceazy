@@ -1,2 +1,0 @@
-# wceazy
-woocommerce tool kits

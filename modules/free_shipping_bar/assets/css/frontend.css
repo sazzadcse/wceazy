@@ -1,0 +1,289 @@
+/** master frontend style for free shipping bar module **/
+@font-face {
+    font-family: 'fontello';
+    src: url('../fonts/fontello.eot?50396587');
+    src: url('../fonts/fontello.eot?50396587#iefix') format('embedded-opentype'),
+    url('../fonts/fontello.woff?50396587') format('woff'),
+    url('../fonts/fontello.ttf?50396587') format('truetype'),
+    url('../fonts/fontello.svg?50396587#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.demo-icon {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+    font-size: 25px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/**remove icons **/
+.icon-cancel1:after{
+    position: absolute;
+    content: "\e800";
+    font-family: "fontello";
+    top: -18px;
+    left: 0;
+    color: #000;
+}
+.icon-cancel2:after{
+    position: absolute;
+    content: "\e801";
+    font-family: "fontello";
+    top: -18px;
+    left: 0;
+}
+.icon-cancel3:after{
+    position: absolute;
+    content: "\e802";
+    font-family: "fontello";
+    top: -18px;
+    left: 0;
+}
+.icon-cancel14:after{
+    position: absolute;
+    content: "\e803";
+    font-family: "fontello";
+    top: -18px;
+    left: 0;
+}
+.icon-cancel5:after{
+    position: absolute;
+    content: "\e804";
+    font-family: "fontello";
+    top: -18px;
+    left: 0;
+}
+
+/**basket icons**/
+.icon-basket1:after{
+    position: absolute;
+    content: "\e805";
+    font-family: "fontello";
+    top: -22px;
+    left: 0;
+}
+
+.icon-basket2:after{
+    position: absolute;
+    content: "\e806";
+    font-family: "fontello";
+    top: -22px;
+    left: 0;
+}
+.icon-basket3:after{
+    position: absolute;
+    content: "\e807";
+    font-family: "fontello";
+    top: -22px;
+    left: 0;
+}
+.icon-basket4:after{
+    position: absolute;
+    content: "\e808";
+    font-family: "fontello";
+    top: -22px;
+    left: 0;
+}
+.icon-basket5:after{
+    position: absolute;
+    content: "\e809";
+    font-family: "fontello";
+    top: -22px;
+    left: 0;
+}
+.icon-basket6:after{
+    position: absolute;
+    content: "\e80a";
+    font-family: "fontello";
+    top: -22px;
+    left: 0;
+}
+/*Style Free Shipping Bar Style1*/
+.fsb-style1 {
+    text-align: center;
+    background: #0A9663;
+    padding: 0 0 10px 0;
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.fsb-style1 .fsb-inner{
+    position: relative;
+}
+.fsb-style1 a{
+    color: #fff;
+}
+.fsb-style1 .fsb-close_button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.fsb-style1 .fsb-close_button i.demo-icon {
+    cursor: pointer;
+}
+.fsb-style1 .fsb-live-preview-progress-bar {
+    margin-top: 9px;
+}
+.fsb-style1 .fsb-close_button i.icon-cancel1:after {
+    top: -18px;
+    left: 0;
+    color: #fff;
+}
+.fsb-style1 .fsb-bar{
+    background: #fff;
+    border-radius: 50px;
+    font-size: inherit;
+    line-height: inherit;
+    width: 98%;
+    margin: 0 auto;
+}
+.fsb-style1 .fsb-size {
+    background: #19212E;
+    border-radius: 50px;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/*Style Free Shipping Bar Style2*/
+.fsb-style2 {
+    text-align: center;
+    /*padding: 10px 50px;*/
+    margin: 0px 0px;
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.fsb-style2 .fsb-inner{
+    position: relative;
+}
+.fsb-style2 .fsb-inner {
+    background: #580A96;
+    padding: 10px;
+    border-radius: 0px;
+}
+.fsb-style2 a{
+    color: #fff;
+}
+.fsb-style2 .fsb-close_button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.fsb-style2 .fsb-close_button i.demo-icon {
+    cursor: pointer;
+}
+.fsb-style2 .fsb-close_button i.icon-cancel1:after {
+    top: -18px;
+    left: 0;
+    color: #fff;
+}
+.fsb-style2 .fsb-live-preview-progress-bar {
+    margin-top: 9px;
+}
+.fsb-style2 .fsb-bar{
+    background: #FFFFFF;
+    border-radius: 0px;
+    font-size: inherit;
+    line-height: inherit;
+}
+.fsb-style2 .fsb-size {
+    background: #B9BCC1;
+    border-radius: 0px;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+/*Style Free Shipping Bar Style3*/
+.fsb-style3 {
+    text-align: center;
+    /*padding: 10px 50px;*/
+    color: #000000;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.fsb-style3 .fsb-inner{
+    position: relative;
+}
+.fsb-style3 .fsb-inner {
+    background: #01D1DE;
+    padding: 10px;
+}
+.fsb-style3 a{
+    color: #000000;
+}
+.fsb-style3 .fsb-close_button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.fsb-style3 .fsb-close_button i.demo-icon {
+    cursor: pointer;
+}
+.fsb-style3 .fsb-close_button i.icon-cancel1:after {
+    top: -18px;
+    left: 0;
+    color: #000;
+}
+.fsb-style3 .fsb-live-preview-progress-bar {
+    margin-top: 0px;
+}
+.fsb-style3 .fsb-bar{
+    background: #FFFFFF;
+    border-radius: 0px;
+    font-size: inherit;
+    line-height: inherit;
+}
+.fsb-style3 .fsb-size {
+    background: #19212E;
+    border-radius: 0px;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+/** cart befour after progress bar style **/
+.wceazy-cart-free-shipping-bar {
+    text-align: center;
+    background: none;
+    padding: 0;
+    color: #fff;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wceazy-cart-free-shipping-bar .fsb-bar-only-progress{
+    background: #0A9663;
+    border-radius: 50px;
+    font-size: inherit;
+    line-height: inherit;
+    width: 98%;
+    margin: 0 auto;
+}
+.wceazy-cart-free-shipping-bar .fsb-size {
+    background: #19212E;
+    border-radius: 50px;
+    padding: 0px;
+    font-size: 12px;
+    line-height: 18px;
+}

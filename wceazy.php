@@ -21,7 +21,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 // check woocommerce exits & active
 if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-    $error = sprintf (esc_html__ ('wcEazy requires %1$sWooCommerce%2$s to be installed & activated!', 'wceazy'), '<a href=" ' . home_url () . '/wp-admin/plugin-install.php">', '</a>');
+    $error = sprintf (esc_html__ ('wcEazy requires %1$sWooCommerce%2$s to be installed & activated!', 'wceazy'), '<a href=" ' . home_url () . '/wp-admin/plugin-install.php?s=WooCommerce&tab=search&type=term">', '</a>');
     $message = '<div class="error"><p>' . $error . '</p></div>';
     echo $message;
     return;
