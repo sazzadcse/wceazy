@@ -79,7 +79,11 @@
                                             <li class=""><?php echo $this->shop_info['shop_name']; ?></li>
                                             <li class=""><?php echo $this->shop_info['address1']; ?></li>
                                             <li class=""><?php echo $this->shop_info['city']; ?></li>
-                                            <li class=""><?php echo WC()->countries->states[$this->shop_info['country']][$this->shop_info['state']]; ?></li>
+                                            <li class="">
+                                            <?php 
+                                                    echo !empty($this->shop_info['country']) && !empty($this->shop_info['state']) ? WC()->countries->states[$this->shop_info['country']][$this->shop_info['state']] : ''; 
+                                                ?>
+                                            </li>
                                             <li class=""><?php echo WC()->countries->countries[ $this->shop_info['country'] ]; ?></li>
                                             <li class=""><?php echo $this->shop_info['postcode']; ?></li>
                                         </ul>
