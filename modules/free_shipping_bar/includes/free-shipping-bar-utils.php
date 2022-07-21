@@ -68,15 +68,18 @@ if (!class_exists ('wcEazyFreeShippingBarUtils')) {
          *
          **/
 		public function wceazy_get_default_shipping_zone() {
-
-			$shipping_zones = WC_Shipping_Zones::get_zones( );
+			
             $values = [];
-            foreach($shipping_zones as $shipping_zone){
-                $shipping_zone_id = $shipping_zone['zone_id'];
 
-                if( $this->wceazy_check_available_zone($shipping_zone_id) ){
-                    $shipping_zone_obj          = WC_Shipping_Zones::get_zone($shipping_zone_id);
-                    $values[$shipping_zone_id]  = $shipping_zone_obj->get_zone_name();
+            if( class_exists( 'WooCommerce' ) ){
+                $shipping_zones = WC_Shipping_Zones::get_zones( );
+                foreach($shipping_zones as $shipping_zone){
+                    $shipping_zone_id = $shipping_zone['zone_id'];
+
+                    if( $this->wceazy_check_available_zone($shipping_zone_id) ){
+                        $shipping_zone_obj          = WC_Shipping_Zones::get_zone($shipping_zone_id);
+                        $values[$shipping_zone_id]  = $shipping_zone_obj->get_zone_name();
+                    }
                 }
             }
 
@@ -93,9 +96,11 @@ if (!class_exists ('wcEazyFreeShippingBarUtils')) {
         public function getWooProducts() {
 
             $results = array();
-            $args = array('post_type' => 'product', 'posts_per_page' => -1);
-            foreach (get_posts($args) as $product) {
-                $results[] = array("id" => $product->ID, "text" => $product->post_title);
+            if( class_exists( 'WooCommerce' ) ){
+                $args = array('post_type' => 'product', 'posts_per_page' => -1);
+                foreach (get_posts($args) as $product) {
+                    $results[] = array("id" => $product->ID, "text" => $product->post_title);
+                }
             }
             return $results;
         }
@@ -121,17 +126,17 @@ if (!class_exists ('wcEazyFreeShippingBarUtils')) {
         private function wceazy_get_user_selected_zone() {
             //woo instance
             global $woocommerce;
+            if( class_exists( 'WooCommerce' ) ){
+                if( isset(WC()->cart ) && is_object( WC()->cart ) ){
+                    $shipping_packages = WC()->cart->get_shipping_packages();
+                
+                    $shipping_zone = wc_get_shipping_zone( reset( $shipping_packages ) );
 
-            if( isset(WC()->cart ) && is_object( WC()->cart ) ){
-                $shipping_packages = WC()->cart->get_shipping_packages();
-            
-                $shipping_zone = wc_get_shipping_zone( reset( $shipping_packages ) );
-
-                if( is_object( $shipping_zone ) ){
-                    return $shipping_zone->get_id();
+                    if( is_object( $shipping_zone ) ){
+                        return $shipping_zone->get_id();
+                    }
                 }
             }
-
             return false;
 
         }
@@ -162,20 +167,21 @@ if (!class_exists ('wcEazyFreeShippingBarUtils')) {
             global $woocommerce;
 
             $shipping_zone_id = false;
-
-            if( isset( WC()->session ) ){
-    
-                if( ( !empty( WC()->session ) && is_array( WC()->session->get( 'chosen_shipping_methods' ) ) ) || ( isset($_GET['wc-ajax'] ) && $_GET['wc-ajax'] == 'update_order_review') ) {
+            if( class_exists( 'WooCommerce' ) ){
+                if( isset( WC()->session ) ){
         
-                    if($shipping_zone_id === false){
-                        $shipping_zone_id = $this->wceazy_get_user_selected_zone();
-                    }
+                    if( ( !empty( WC()->session ) && is_array( WC()->session->get( 'chosen_shipping_methods' ) ) ) || ( isset($_GET['wc-ajax'] ) && $_GET['wc-ajax'] == 'update_order_review') ) {
             
-                    if($shipping_zone_id === false){
-                        $shipping_zone_id = $this->wceazy_get_geolocated_zone();
+                        if($shipping_zone_id === false){
+                            $shipping_zone_id = $this->wceazy_get_user_selected_zone();
+                        }
+                
+                        if($shipping_zone_id === false){
+                            $shipping_zone_id = $this->wceazy_get_geolocated_zone();
+                        }
                     }
-                }
 
+                }
             }
     
             return $shipping_zone_id;
@@ -306,7 +312,7 @@ if (!class_exists ('wcEazyFreeShippingBarUtils')) {
             $message_text = '';
 
             if( $order_min_amount <= 0 ){
-                return '';
+                return 'Shipping zone not define!!';
             }
 
             $progress_persent = 0;
@@ -345,9 +351,6 @@ if (!class_exists ('wcEazyFreeShippingBarUtils')) {
         }
         
 
-
-
-        
 
     }
 }

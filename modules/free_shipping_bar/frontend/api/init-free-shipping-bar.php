@@ -20,7 +20,7 @@ if ($this->base_admin->base_admin->db->getModuleStatus($this->base_admin->module
 
     $achieveAmount = round( $achieveAmount, wc_get_price_decimals() );
 
-    if( $achieveAmount >= $targetAmount ){
+    if( $achieveAmount >= $targetAmount && $targetAmount ){
         $progress_persent = 100;
     }else{
         if( $targetAmount == 0 ){
@@ -39,7 +39,7 @@ if ($this->base_admin->base_admin->db->getModuleStatus($this->base_admin->module
         <?php echo $this->base_admin->utils->wceazy_create_message($targetAmount, $achieveAmount); ?>
 
         <div class="fsb-close_button">
-            <span class="fsb-close-icon" data-close_icon="icon-cancel1">
+            <span onclick="wceazy_handle_close_fsb();" class="fsb-close-icon" data-close_icon="icon-cancel1">
                 <i class="demo-icon wceazy-fsb-close-icon icon-cancel1"></i>
             </span>
         </div>

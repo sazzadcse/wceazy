@@ -119,32 +119,31 @@ if (!class_exists ('wcEazyPdfInvoiceAdmin')) {
          *
          * return []
          *
-         * Author : WPCommerz
+         * Author :
          * Develop on : 28-03-2022
          * Update on : -
          *
          * Develop By : Sm. Sazzad
          **/
         public function get_shop_info(){
-            if (!class_exists ('\Woocommerce')) {
-                return;
-            }
-
+            
             if( !empty($this->wfpi_settings) && !empty( $this->wfpi_settings['wfpi_country_state'] )){
                 $country_state = explode(":",$this->wfpi_settings['wfpi_country_state']);
             }
 
-            $country = !empty($country_state) && isset($country_state[0]) ? $country_state[0] : array_search(WC()->countries->countries[WC()->countries->get_base_country()], WC()->countries->countries);
-            $state = !empty($country_state) && isset($country_state[1]) ? $country_state[1] : WC()->countries->get_base_state();
-            $this->shop_info = array(
-                    'shop_name' => !empty($this->wfpi_settings) && !empty($this->wfpi_settings['wfpi_sender_name']) ? $this->wfpi_settings['wfpi_sender_name'] : get_option( 'blogname' ),
-                    'address1'  => !empty($this->wfpi_settings) && !empty($this->wfpi_settings['wfpi_address_line_one']) ? $this->wfpi_settings['wfpi_address_line_one'] : get_option( 'woocommerce_store_address' ),
-                    'address2'  => !empty($this->wfpi_settings) && !empty($this->wfpi_settings['wfpi_address_line_two']) ? $this->wfpi_settings['wfpi_address_line_two'] : get_option( 'woocommerce_store_address_2' ),
-                    'city'      => !empty($this->wfpi_settings) && !empty($this->wfpi_settings['wfpi_address_city']) ? $this->wfpi_settings['wfpi_address_city'] : get_option( 'woocommerce_store_city' ),
-                    'postcode'  => !empty($this->wfpi_settings) && !empty($this->wfpi_settings['wfpi_postal_code']) ? $this->wfpi_settings['wfpi_postal_code'] : get_option( 'woocommerce_store_postcode' ),
-                    'state'     => $state,
-                    'country'   => $country,
-            );
+            if( class_exists( 'WooCommerce' ) ){
+                $country = !empty($country_state) && isset($country_state[0]) ? $country_state[0] : array_search(WC()->countries->countries[WC()->countries->get_base_country()], WC()->countries->countries);
+                $state = !empty($country_state) && isset($country_state[1]) ? $country_state[1] : WC()->countries->get_base_state();
+                $this->shop_info = array(
+                        'shop_name' => !empty($this->wfpi_settings) && !empty($this->wfpi_settings['wfpi_sender_name']) ? $this->wfpi_settings['wfpi_sender_name'] : get_option( 'blogname' ),
+                        'address1'  => !empty($this->wfpi_settings) && !empty($this->wfpi_settings['wfpi_address_line_one']) ? $this->wfpi_settings['wfpi_address_line_one'] : get_option( 'woocommerce_store_address' ),
+                        'address2'  => !empty($this->wfpi_settings) && !empty($this->wfpi_settings['wfpi_address_line_two']) ? $this->wfpi_settings['wfpi_address_line_two'] : get_option( 'woocommerce_store_address_2' ),
+                        'city'      => !empty($this->wfpi_settings) && !empty($this->wfpi_settings['wfpi_address_city']) ? $this->wfpi_settings['wfpi_address_city'] : get_option( 'woocommerce_store_city' ),
+                        'postcode'  => !empty($this->wfpi_settings) && !empty($this->wfpi_settings['wfpi_postal_code']) ? $this->wfpi_settings['wfpi_postal_code'] : get_option( 'woocommerce_store_postcode' ),
+                        'state'     => $state,
+                        'country'   => $country,
+                );
+            }
 
         }
 

@@ -67,9 +67,6 @@
     <div class="label_content wceazy_fsb_settings">
         <div class="wceazy_module_list_items">
             <div class="wceazy_module_item">
-                <?php 
-                    $shipping_zones = $this->utils->wceazy_get_default_shipping_zone();
-                ?>
                 <select name="wceazy_fsb_shipping_zone" id="wceazy_fsb_shipping_zone"
                     class="wceazy_select_control wceazy_select2">
                     <option value=""> Please select</option>
@@ -83,6 +80,10 @@
                     
                 </select>
             </div>
+            <small style="color:#e91717">
+                You must select your shipping zone, if not created please create 
+                <a style="color:#f109aa;margin-left:3px" href="<?php echo admin_url('admin.php?page=wc-settings&tab=shipping'); ?>">Here</a>.
+            </small>
         </div>
     </div>
 </div>
@@ -144,8 +145,8 @@
                 <select class="wceazy_select_control wceazy_select2" multiple>
                     <option value="" disabled> Please select</option>
                     <?php
-                    if ( ! empty( $this->utils->getWooProducts () ) ) {
-                        foreach ($this->utils->getWooProducts () as $key => $product) { ?>
+                    if ( ! empty( $getWooProducts ) ) {
+                        foreach ( $getWooProducts as $key => $product) { ?>
                             <option value="" disabled> <?php echo $product["text"];?></option>;
                         <?php }
                     }

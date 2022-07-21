@@ -21,12 +21,32 @@ if (!class_exists('wcEazyAdmin')) {
             $this->db->init($this);
             new wcEazyAdminAjax($this);
 
-            add_action("admin_menu", array($this, 'wceazy_admin_menu'));
-            add_action('admin_enqueue_scripts', array($this, 'wceazy_admin_enqueue'));
-            add_action( 'plugin_action_links_' . WCEAZY_BASE_PATH, array( $this, 'wceazy_action_links') );
+            if (in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+                add_action("admin_menu", array($this, 'wceazy_admin_menu'));
+                add_action('admin_enqueue_scripts', array($this, 'wceazy_admin_enqueue'));
+                add_action( 'plugin_action_links_' . WCEAZY_BASE_PATH, array( $this, 'wceazy_action_links') );
+            }else{
+                add_action( 'admin_init', array($this, 'wceazy_free_plugin_activation') );
+            }
 
         }
 
+        public function wceazy_free_plugin_activation() {
+            if ( is_admin() && current_user_can( 'activate_plugins' ) &&  !is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+                add_action( 'admin_notices', array( $this, 'wceazy_free_woo_plugin_notice') );
+            }
+        }
+
+        public function wceazy_free_woo_plugin_notice() {
+            $main_plugin  = __( 'wcEazy', 'wceazy' );
+            $lite_plugin = __( 'WooCommerce', 'wceazy' );
+
+            echo '<div class="notice notice-error is-dismissible"><p>' . sprintf( esc_html__( '%1$s requires %2$s to be installed and activated to function properly. %3$s', 'wceazy' ),
+                    '<strong>' . esc_html( $main_plugin ). '</strong>',
+                    '<strong>' . esc_html( $lite_plugin ) . '</strong>',
+                    '<a href="' . esc_url( admin_url( 'plugin-install.php?s=WooCommerce&tab=search&type=term' ) ) . '">' . __( 'Please click on this link and install WooCommerce from WordPress.', 'wceazy' ) . '</a>' )
+                . '</p></div>';
+        }
 
         function wceazy_action_links($links) {
             $settings_url = add_query_arg( 'page', 'wceazy-dashboard', get_admin_url() . 'admin.php' );

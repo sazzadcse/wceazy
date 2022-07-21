@@ -180,9 +180,12 @@ function wceazy_hide_all() {
 
 
 function wceazy_update_module_status(view) {
+    var $parent = jQuery(view).parent().parent().parent().parent().parent();
+    var $el     = jQuery($parent).find('.settings');
+    jQuery($el).text('Please Wait..');
 
-    var module_slug = jQuery(view).parent().parent().parent().parent().parent().attr("data-slug")
-    var module_status = jQuery(view).is(':checked') ? 1 : 0
+    var module_slug     = jQuery($parent).attr("data-slug");
+    var module_status   = jQuery(view).is(':checked') ? 1 : 0;
     var post_data = {
         'action': 'wceazy_update_module_status',
         'module_slug': module_slug,
@@ -194,13 +197,15 @@ function wceazy_update_module_status(view) {
             var obj = JSON.parse(data);
             if (obj.status == "true") {
                 if (module_status === 1) {
-                    jQuery(view).parent().parent().find(".settings").addClass("active")
+                    jQuery(view).parent().parent().find(".settings").addClass("active");
+                    jQuery($el).html('<span class="dashicons dashicons-admin-generic"></span> Settings');
                 } else {
-                    jQuery(view).parent().parent().find(".settings").removeClass("active")
+                    jQuery(view).parent().parent().find(".settings").removeClass("active");
+                    jQuery($el).html('<span class="dashicons dashicons-admin-generic"></span> Settings');
                 }
             }
         }
-    })
+    });
 
 }
 

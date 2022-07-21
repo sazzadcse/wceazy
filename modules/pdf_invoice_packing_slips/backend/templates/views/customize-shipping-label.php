@@ -38,7 +38,7 @@
 
                                     <div class="wfpdf_shipping_order_data wfcpss_order_number">
                                         <span class="wfpdf_shipping_order_label">Order No: </span>
-                                        <span class="wfpdf_shipping_order_val wfpdf_invc_text_bold"><?php echo $order->get_order_number() ? $order->get_order_number() : '-'; ?></span>
+                                        <span class="wfpdf_shipping_order_val wfpdf_invc_text_bold"><?php echo !empty($order) && $order->get_order_number() ? $order->get_order_number() : '-'; ?></span>
                                     </div>
 
                                     <div class="wfpdf_shipping_weight wfcpss_weight">
@@ -46,12 +46,13 @@
                                         <span class="wfpdf_shipping_weight_val wfpdf_invc_text_bold">
                                             <?php
                                                 $total_weight = 0;
-
-                                                foreach( $order->get_items() as $item_id => $product_item ){
-                                                    $quantity = $product_item->get_quantity();
-                                                    $product = $product_item->get_product();
-                                                    $product_weight = $product->get_weight() ? $product->get_weight() : 0;
-                                                    $total_weight +=  $product_weight * $quantity;
+                                                if( !empty($order) ){
+                                                    foreach( $order->get_items() as $item_id => $product_item ){
+                                                        $quantity = $product_item->get_quantity();
+                                                        $product = $product_item->get_product();
+                                                        $product_weight = $product->get_weight() ? $product->get_weight() : 0;
+                                                        $total_weight +=  $product_weight * $quantity;
+                                                    }
                                                 }
 
                                                 echo $total_weight . get_option('woocommerce_weight_unit');
@@ -76,16 +77,16 @@
                                 <div class="wfpdf_shipping_label_header">From:</div>
                                 <div class="wfpdf_shipping_label_val">
                                         <ul>
-                                            <li class=""><?php echo $this->shop_info['shop_name']; ?></li>
-                                            <li class=""><?php echo $this->shop_info['address1']; ?></li>
-                                            <li class=""><?php echo $this->shop_info['city']; ?></li>
+                                            <li class=""><?php echo !empty($this->shop_info) ? $this->shop_info['shop_name'] : ''; ?></li>
+                                            <li class=""><?php echo !empty($this->shop_info) ? $this->shop_info['address1'] : ''; ?></li>
+                                            <li class=""><?php echo !empty($this->shop_info) ? $this->shop_info['city'] : ''; ?></li>
                                             <li class="">
                                             <?php 
                                                     echo !empty($this->shop_info['country']) && !empty($this->shop_info['state']) ? WC()->countries->states[$this->shop_info['country']][$this->shop_info['state']] : ''; 
                                                 ?>
                                             </li>
-                                            <li class=""><?php echo WC()->countries->countries[ $this->shop_info['country'] ]; ?></li>
-                                            <li class=""><?php echo $this->shop_info['postcode']; ?></li>
+                                            <li class=""><?php echo !empty($this->shop_info) ? WC()->countries->countries[ $this->shop_info['country'] ] : ''; ?></li>
+                                            <li class=""><?php echo !empty($this->shop_info) ? $this->shop_info['postcode'] : ''; ?></li>
                                         </ul>
                                     </div>
                             </div>
@@ -96,7 +97,7 @@
                                 <div class="wfpdf_shipping_label_header wfcpss_shipping_address">To:</div>
                                 <div class="wfpdf_shipping_label_val wfcpss_shipping_address">
                                     <?php
-                                    $shipping_aadress = $order->get_address('shipping');
+                                    $shipping_aadress = !empty($order) ? $order->get_address('shipping') : '';
                                     if( !empty($shipping_aadress) ){ ?>
                                         <ul>
                                             <li class=""><?php echo $shipping_aadress['first_name']; ?></li>
@@ -110,7 +111,7 @@
                                 </div>
 
                                 <?php
-                                $billing_aadress = $order->get_address('billing');
+                                $billing_aadress = !empty($order) ? $order->get_address('billing') : '';
                                 if( !empty($billing_aadress) ){
                                     ?>
                                     <ul>

@@ -86,16 +86,16 @@ $currency_symbol = get_woocommerce_currency_symbol( $currency_code );
                                         </div>
                                         <div class="wfpdf_billing_address_val">
                                             <ul>
-                                                <li class="wfpci_fa_shop_name"><?php echo $this->shop_info['shop_name']; ?></li>
-                                                <li class="wfpci_fa_address1"><?php echo $this->shop_info['address1']; ?></li>
-                                                <li class="wfpci_fa_city"><?php echo $this->shop_info['city']; ?></li>
+                                                <li class="wfpci_fa_shop_name"><?php echo !empty($this->shop_info) ?$this->shop_info['shop_name'] : ''; ?></li>
+                                                <li class="wfpci_fa_address1"><?php echo !empty($this->shop_info) ? $this->shop_info['address1'] : ''; ?></li>
+                                                <li class="wfpci_fa_city"><?php echo !empty($this->shop_info) ? $this->shop_info['city'] : ''; ?></li>
                                                 <li class="wfpci_fa_state">
                                                 <?php 
                                                         echo !empty($this->shop_info['country']) && !empty($this->shop_info['state']) ? WC()->countries->states[$this->shop_info['country']][$this->shop_info['state']] : ''; 
                                                     ?>
                                                 </li>
-                                                <li class="wfpci_fa_country"><?php echo WC()->countries->countries[ $this->shop_info['country'] ]; ?></li>
-                                                <li class="wfpci_fa_postcode"><?php echo $this->shop_info['postcode']; ?></li>
+                                                <li class="wfpci_fa_country"><?php echo !empty($this->shop_info) ? WC()->countries->countries[ $this->shop_info['country'] ] : ''; ?></li>
+                                                <li class="wfpci_fa_postcode"><?php echo !empty($this->shop_info) ? $this->shop_info['postcode'] : ''; ?></li>
                                             </ul>
                                         </div>
                                     </div>

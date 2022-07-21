@@ -271,6 +271,12 @@ header.fct-header button {
     border-radius: 3px;
     margin-right: 15px;
 }
+
+.fct-cart-img img {
+    max-width: 100%;
+    height: auto;
+}
+
 .fct-cart-product{
     width: 80%;
 }

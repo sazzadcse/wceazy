@@ -20,7 +20,7 @@ if ($this->base_admin->base_admin->db->getModuleStatus($this->base_admin->module
 
     $achieveAmount = round( $achieveAmount, wc_get_price_decimals() );
 
-    if( $achieveAmount >= $targetAmount ){
+    if( ($achieveAmount >= $targetAmount) && $targetAmount > 0 ){
         $progress_persent = 100;
     }else{
         if( $targetAmount == 0 ){

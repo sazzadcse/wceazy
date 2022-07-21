@@ -1,11 +1,11 @@
-=== wcEazy ===
+=== wcEazy - Supercharge your WooCommerce Store ===
 Contributors: wceazy, wpcommerz, sazzadpro, darklup
 Donate link: https://wceazy.com
 Tags: woocommerce, bulk coupon generator, bogo deal, floating cart, url coupon
 Requires PHP: 5.6
 Requires at least: 5.1
-Tested up to: 6.0
-Stable tag: 1.0.1
+Tested up to: 6.0.1
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,23 +31,18 @@ With just one plugin, you can improve the flexibility of your Woocommerce websit
 
 
 
-
-
 <h3>Modules of WordPress plugin wcEazy</h3>
 
 <ol>
 	<li><strong>Auto Apply Coupon:</strong> Enabling this module you will let your customers enjoy the term of automatically applying coupons by just clicking on the Apply Coupon button. It helps to remove the hassle of entering a coupon code for a coupon.</li>
-	<li><strong>BOGO Deal:</strong> Create attractive BOGO deals for your WooCommerce store to catch your customers attention and encourage them to stay in your store and buy products more and more.
-</li>
+	<li><strong>BOGO Deal:</strong> Create attractive BOGO deals for your WooCommerce store to catch your customers attention and encourage them to stay in your store and buy products more and more.</li>
 	<li><strong>Coupon Generator:</strong> Promote your WooCommerce site generating similar coupons in big quantities with wcEazy. Using this plugin you are allowed to Generate similar types of coupons for clients.</li>
-	<li><strong>Floating Cart:</strong> wcEazy provides a floating Cart for WooCommerce that is used to add a sticky cart button with product information, title and image, product count etc.
-</li>
-	<li><strong>One Click Checkout:</strong> It allows users to create a special page using One Click Checkout for WooCommerce website where customers can select products, checkout, and pay all on the same page.
-</li>
-	<li><strong>PDF Invoice and Packing Slips:</strong> Depending on the order state, PDF Invoice & Packing Slip for WooCommerce generates PDF invoices and sends them to your clients by attaching them to the order email. A PDF invoice contains product purchasing details that are used to track and record purpose. You can access the PDF invoice as a file format, print or save it to keep a record.
-</li>
+	<li><strong>Floating Cart:</strong> wcEazy provides a floating Cart for WooCommerce that is used to add a sticky cart button with product information, title and image, product count etc.</li>
+	<li><strong>One Click Checkout:</strong> It allows users to create a special page using One Click Checkout for WooCommerce website where customers can select products, checkout, and pay all on the same page.</li>
+	<li><strong>PDF Invoice and Packing Slips:</strong> Depending on the order state, PDF Invoice & Packing Slip for WooCommerce generates PDF invoices and sends them to your clients by attaching them to the order email. A PDF invoice contains product purchasing details that are used to track and record purpose. You can access the PDF invoice as a file format, print or save it to keep a record.</li>
 	<li><strong>Product Sticky Bar:</strong> Initiate your WooCommerce site with product sticky bar  is a useful addon for boosting conversion rates on WooCommerce sites. Every product page contains a sticky bar with an Add to Cart button as well as other product-related information including a product thumbnail, title, rating, and price.</li>
 	<li><strong>URL Coupon:</strong> Generate unique URLs to any coupon in your e-commerce store. Adding a URL to any coupon, you can apply a coupon code automatically just by clicking a link.</li>
+	<li><strong>Free Shipping Bar:</strong> A floating banner that displays at the top or bottom of your website and informs visitors that you provide free shipping or other offers is known as a free shipping bar. It's an excellent approach to encourage customers to complete the checkout process.</li>
 </ol>
 
 <br>
@@ -205,7 +200,6 @@ With just one plugin, you can improve the flexibility of your Woocommerce websit
 
 
 
-
 <h3>One Click Checkout</h3>
 <ol>
 	<li><strong>Disable Cart Page:</strong>  Disable cart page so that the cart page will be redirected to the checkout page.
@@ -344,6 +338,56 @@ With just one plugin, you can improve the flexibility of your Woocommerce websit
 <ol>
 	<li><strong>Per Page View:</strong> Select the amount of coupons that you want to show on each page.</li>
 	<li><strong>Show Coupon Type (Pro):</strong> Choose your required coupon type for URL coupon. </li>
+	<li><strong>Active Coupon URL: </strong> Enable coupon URL functionality for this coupon by activating the feature. </li>
+	<li><strong>Force Apply:</strong> Apply the feature of Force Appy and it will remove all other coupons and only apply the current coupon on cart items. </li>
+	<li><strong>Coupon URL:</strong> Using this feature you can copy the url of a coupon. </li>
+	<li><strong>Override URL Code:</strong> You can easily override a coupon’s url as you need. The changes you have made will show in the field of Coupon URL. </li>
+	<li><strong>Redirect To URL:</strong> Using this feature you can redirect a page with the coupon url. That means on a customer click the coupon url will redirect to the page. </li>
+	<li><strong>Success Message:</strong> Leave a success message on applying the URL Coupon. </li>
+</ol>
+
+
+<h3>Free Shipping Bar</h3>
+<ol>
+	<li><strong>Enable Shipping Bar:</strong> Allows to enable the Shipping bar.</li>
+	<li><strong>Display in Desktop:</strong> This feature is to enable the shipping bar only for desktop screens. </li>
+	<li><strong>Display in Mobile:</strong> When enabling this feature the Shipping bar will be displayed in mobile screens. </li>
+	<li><strong>Select Shipping Zone:</strong> Allows you to select a shipping zone. </li>
+	<li><strong>Detect IP:</strong>The person that accesses your website will automatically apply to the free Shipping Zone using their IP if you enable Detect IP. </li>
+	<li><strong>Exclude Pages:</strong> Provide the scope to exclude the pages where you do't want to show the Free Shipping Bar. </li>
+	<li><strong>Exclude Products (Pro):</strong> Accessing this feature you can exclude particular pages for which you don’t want to show the free Shipping Bar. </li>
+	<li><strong>Show in Cart Subtotal Area:</strong> Enable the feature to show the free shipping notification in the cart page subtotal area. </li>
+	<li><strong>Select Position on Cart Page:</strong> Allows to select position of the free shipping notification in the cart page. </li>
+	<li><strong>Show in Checkout Subtotal Area:</strong> It permits to show the free shipping notification in the checkout subtotal area. </li>
+	<li><strong>Inside Progress Bar Text:</strong> Accessing this feature you can enter the text of cart & checkout page free shipping progress bar. </li>
+	<li><strong>Progress Bar's Background (Pro):</strong> Customize the color of Free Shipping Bar's which is shown in cart & checkout page. </li>
+	<li><strong>System Announce:</strong> Using the feature you have to provide a message about minimum order amount for free shipping. </li>
+	<li><strong>SPurchased Message (Pro):</strong> After purchasing products this feature will show your customers a purchase message according to a customer’s cart total, minimum order and missing amount. </li>
+	<li><strong>Success Message:</strong> Allows  to Write a success message and use the shortcode {checkout_page} to redirect the checkout page. </li>
+	<li><strong>Initial Delay Time (Pro):</strong> Add an initial delay time in millisecond. The Free Shipping Bar will appear according to your setting time. </li>
+	<li><strong>Allow Disappear Time (Pro):</strong>The feature allows time to disappear the shipping bar.</li>
+	<li><strong>Set Disappear Time (Pro):</strong> When you allow disappear time, you need to  Set initial delay time to disappear the Free Shipping Bar. </li>
+	<li><strong>Shipping Bar Position:</strong> This feature lets you select a position between top and bottom of the free shipping bar. </li>
+	<li><strong>Progress Bar Layout (Pro):</strong> The feature provides three different layouts. You have to select a layout according to your choice. </li>
+	<li><strong>Background Color (Pro):</strong> Accessing the feature you flexibly pick a color for the background of the shipping bar according to your requirements that can match with your site’s overall color. </li>
+	<li><strong>Inner Bar Background Color (Pro):</strong> Set your free shipping bar inner background color. </li>
+	<li><strong>Text Color (Pro):</strong> With this feature you can pick any color for the shipping bar’s text color. </li>
+	<li><strong>Link Color:</strong> Set your free shipping bar link color. </li>
+	<li><strong>Font Size:</strong> Font size can be modified with Font Size. </li>
+	<li><strong>Text Align:</strong> Set your free shipping bar text align among left, cent and right accessing this feature. </li>
+	<li><strong>Shipping Bar Close Icon:</strong> Some close icons are available here. Select your  required one for the free shipping bar close icon. </li>
+	<li><strong>Close Icon Color (Pro):</strong> Set your free shipping bar close icon color using the feature. </li>
+	<li><strong>Close Icon Size:</strong> You can set here free shipping bar close icon size. </li>
+	<li><strong>Enable Progress Bar:</strong> Show progress bar with free shipping bar. </li>
+	<li><strong>Progress Bar Background (Pro):</strong> Allows to set your progress bar background color. </li>
+	<li><strong>Current Progress Background (Pro):</strong> Set your free shipping bar current progress background color. </li>
+	
+	<li><strong>Progress Text Color (Pro):</strong> Free shipping bar progress text color is 100% customizable. </li>
+	<li><strong>Progress Bar Font Size:</strong> Set your free shipping bar progress font size using the feature. </li>
+	<li><strong>Current Progress Background (Pro):</strong> Set your free shipping bar current progress background color. </li>
+	<li><strong>Current Progress Background (Pro):</strong> Set your free shipping bar current progress background color. </li>
+	<li><strong>Current Progress Background (Pro):</strong> Set your free shipping bar current progress background color. </li>
+	<li><strong>Current Progress Background (Pro):</strong> Set your free shipping bar current progress background color. </li>
 </ol>
 
 
@@ -417,3 +461,11 @@ screenshot-9.png
 
 = 1.0.1 =
 This is initial Release for wcEazy
+
+= 1.0.2 =
+1. New module added : Free Shipping Bar.
+2. Fix: PDF Invoice & Shipping Slip module's undefine call to member function issues.
+
+= 1.0.3 =
+1. Fix: Free Shipping Bar module's css issues.
+2. Added: Select Shipping Zone Note for Free Shipping Bar module.

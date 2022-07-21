@@ -3,7 +3,7 @@
  * Plugin Name:       wcEazy
  * Plugin URI:        https://wceazy.com
  * Description:       wcEazy provides multiple WooCommerce extensions in a single package you’ll ever require.
- * Version:           1.0.1
+ * Version:           1.0.3
  * Author:            wcEazy
  * Author URI:        https://wceazy.com
  * License:           GPL-2.0+
@@ -19,16 +19,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 
-// check woocommerce exits & active
-if ( !in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-    $error = sprintf (esc_html__ ('wcEazy requires %1$sWooCommerce%2$s to be installed & activated!', 'wceazy'), '<a href=" ' . home_url () . '/wp-admin/plugin-install.php?s=WooCommerce&tab=search&type=term">', '</a>');
-    $message = '<div class="error"><p>' . $error . '</p></div>';
-    echo $message;
-    return;
-}
-
-
-define ('WCEAZY_VERSION', '1.0.1');
+define ('WCEAZY_VERSION', '1.0.3');
 defined ('WCEAZY_PATH') or define ('WCEAZY_PATH', plugin_dir_path (__FILE__));
 defined ('WCEAZY_URL') or define ('WCEAZY_URL', plugin_dir_url (__FILE__));
 defined ('WCEAZY_BASE_FILE') or define ('WCEAZY_BASE_FILE', __FILE__);

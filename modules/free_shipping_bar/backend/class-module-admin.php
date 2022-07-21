@@ -102,6 +102,13 @@ if (!class_exists ('wcEazyFreeShippingBarAdmin')) {
 
             $visable_inner_bg_style = ($fsb_progress_layout !== 'fsb-style1') ? 'show' : 'hidden';
 
+            $getWooProducts    = [];
+            $shipping_zones    = [];
+            if( $this->base_admin->db->getModuleStatus ($this->module_slug) ) {
+               $getWooProducts = $this->utils->getWooProducts();
+               $shipping_zones = $this->utils->wceazy_get_default_shipping_zone();
+            }
+
             // load view
             include_once WCEAZY_MODULES_PATH . "/" . $this->module_slug . "/backend/templates/dashboard.php";
 
