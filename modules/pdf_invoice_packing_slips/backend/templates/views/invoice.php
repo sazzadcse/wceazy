@@ -35,7 +35,25 @@
 
 <div class="wceazy_form_group pdf_invoice_settings_bar">
     <div class="label_title">
-        <h4><?php _e ('Attach to', 'wceazy'); ?></h4>
+        <h4><?php _e ('Enable VAT & SSN on Checkout', 'wceazy-pro'); ?> <span class="wceazy_get_pro">(Pro)</span> </h4>
+    </div>
+
+    <div class="label_content">
+        <div class="wceazy_module_list_items">
+            <div class="wceazy_module_item">
+                <label class="toggle_switch">
+                    <input id="wfpi_enable_vat_ssn" calss="" type="checkbox" disabled>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <small>Turn on the switch if you want to show VAT & SSN option on Checkout page.</small>
+    </div>
+</div>
+
+<!-- <div class="wceazy_form_group pdf_invoice_settings_bar">
+    <div class="label_title">
+        <h4><?php // _e ('Attach to', 'wceazy'); ?></h4>
     </div>
 
     <div class="label_content">
@@ -66,7 +84,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="tab_body_sub_title mt20">
     <h4><?php _e ('Invoice Number', 'wceazy'); ?></h4>

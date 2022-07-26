@@ -23,7 +23,7 @@
 		position: sticky;
 		top: 25px;
 		bottom: 0px;
-		padding: 8px 0;
+		/*padding: 8px 0;*/
 		transition: all .3s;
 		z-index: 999;
 		width: 100%;

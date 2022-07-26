@@ -99,7 +99,7 @@ if (!class_exists ('wcEazyPdfInvoiceUtils')) {
          *
          * return invoice number
          *
-         * Author : WPCommerz
+         * Author : wcEazy
          * Develop on : 28-03-2022
          * Update on : -
          *
@@ -112,13 +112,15 @@ if (!class_exists ('wcEazyPdfInvoiceUtils')) {
 
                 if( $order_number_as_invoice == 'yes' && !empty($order_number)){
                     $invoice_start_number = $order_number;
-                }else{
-                    $invoice_start_number = !empty($this->wfpi_settings['wfpi_invoice_start_number']) ? $this->wfpi_settings['wfpi_invoice_start_number'] : 1001;
+                }else{                    
+                    $wfpi_invoice_start_number = !empty($this->wfpi_settings['wfpi_invoice_start_number']) ? $this->wfpi_settings['wfpi_invoice_start_number'] : 1001;
+                    $invoice_start_number = $wfpi_invoice_start_number . $order_number;
                 }
             }
 
             return $invoice_start_number;
         }
+
 
         /*
          * define generate pdf invoice
@@ -126,7 +128,7 @@ if (!class_exists ('wcEazyPdfInvoiceUtils')) {
          *
          * return pdf invoice
          *
-         * Author : WPCommerz
+         * Author : wcEazy
          * Develop on : 28-03-2022
          * Update on : -
          *

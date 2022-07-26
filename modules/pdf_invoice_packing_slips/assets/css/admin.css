@@ -723,6 +723,27 @@ height: auto;
 .wfpdf_product_table_payment_total td:nth-child(3) {
   font-weight: bold;
 }
+
+/* Paid Seal */
+.wfpdf_invc_paid_seal {
+  position: absolute;
+  z-index: 10;
+  width: 130px;
+  border-radius: 5px;
+  font-size: 22px;
+  height: 40px;
+  line-height: 38px;
+  border: 3px solid #6E32C9;
+  border-style: double;
+  color: #6E32C9;
+  font-weight: 700;
+  text-align: center;
+  transform: rotate(-45deg);
+  opacity: 0.6;
+  top: 85px;
+  left: 25%;
+}
+
 /* Received Seal */
 .wfpdf_invc_received_seal {
   position: absolute;

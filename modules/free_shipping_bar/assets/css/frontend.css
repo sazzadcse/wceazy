@@ -129,7 +129,7 @@
 }
 .fsb-style1 .fsb-close_button {
     position: absolute;
-    right: -40px;
+    right: -30px;
     top: 0px;
 }
 .fsb-style1 .fsb-close_button i.demo-icon {
@@ -287,4 +287,36 @@
     padding: 0px;
     font-size: 12px;
     line-height: 18px;
+}
+/*@media Query*/
+@media (min-width:320px) and (max-width: 576px) {
+    .fsb-style1 .fsb-close_button {
+        right: -20px;
+    }
+    #wceazy_free_shipping_bar .fsb-inner {
+        padding: 10px 55px;
+        line-height: 25px;
+    }
+}
+
+@media (min-width: 767px) and (max-width:991px){
+    .fsb-style1 .fsb-close_button {
+        right: -20px;
+    }
+    #wceazy_free_shipping_bar .fsb-inner {
+        padding: 10px 50px;
+        line-height: 25px;
+    }
+}
+
+@media (min-width: 992px) and (max-width:1199px){
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1400px) {
+
 }

@@ -314,6 +314,26 @@ if ($this->base_admin->base_admin->db->getModuleStatus ($this->base_admin->modul
                 font-weight: bold;
             }
 
+            /* Paid Seal */
+            .wfpdf_invc_paid_seal {
+                position: absolute;
+                z-index: 10;
+                width: 130px;
+                border-radius: 5px;
+                font-size: 22px;
+                height: 40px;
+                line-height: 38px;
+                border: 3px solid #6E32C9;
+                border-style: double;
+                color: #6E32C9;
+                font-weight: 700;
+                text-align: center;
+                transform: rotate(-45deg);
+                opacity: 0.6;
+                top: 85px;
+                left: 25%;
+            }
+
             /* Received Seal */
             .wfpdf_invc_received_seal {
                 position: absolute;
@@ -380,7 +400,7 @@ if ($this->base_admin->base_admin->db->getModuleStatus ($this->base_admin->modul
                                         <span class="wfpdf_invoice_number_label">INVOICE#</span>
                                         <span class="wfte_invoice_number_val wfpdf_invc_text_bold">
                                         <?php
-                                        echo $this->base_admin->utils->generate_invoice_number ($order->get_order_number ());
+                                        echo $this->base_admin->utils->generate_invoice_number ($order->get_order_number (), $order->get_id());
                                         ?>
                                     </span>
                                     </div>
@@ -621,6 +641,14 @@ if ($this->base_admin->base_admin->db->getModuleStatus ($this->base_admin->modul
                             </tr>
                             </tbody>
                         </table>
+
+                        <?php
+                        if (!empty($this->base_admin->wfpi_settings) && isset($this->base_admin->wfpi_settings['wfpi_enable_paid_stamp'])) {
+                            ?>
+                            <div class="wfpdf_invc_paid_seal">
+                                <span class="wfpdf_invc_paid_seal_text">PAID</span>
+                            </div>
+                        <?php } ?>
 
                         <?php
                         if (!empty($this->base_admin->wfpi_settings) && isset($this->base_admin->wfpi_settings['wfpi_enable_payment_stamp'])) {
